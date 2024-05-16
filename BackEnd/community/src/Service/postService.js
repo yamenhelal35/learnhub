@@ -1,4 +1,6 @@
 const postRepository = require('../Repository/postRepository');
+const CommunityRepository= require('../Repository/communityRepository');
+
 
 class PostService {
     getAllPosts() {
@@ -9,8 +11,8 @@ class PostService {
         return postRepository.getPostById(id);
     }
 
-    createPost(title, content) {
-        return postRepository.createPost(title, content);
+    createPost(title, content , communityId) {
+        return postRepository.createPost(title, content, communityId);
     }
 
     updatePost(id, title, content) {

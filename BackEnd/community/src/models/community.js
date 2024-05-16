@@ -16,6 +16,35 @@ const CommunitySchema = new mongoose.Schema(
   { timestamps: true }
 )
 
+
+const postSchema = new mongoose.Schema({
+    title: {
+        type: String,
+        required: true
+    },
+    content: {
+        type: String,
+        required: true
+    },
+    createdAt: {
+        type: Date,
+        default: Date.now
+    },
+    community: { 
+        type: mongoose.Schema.Types.ObjectId,
+        ref: 'Community', 
+        required: true
+    }
+});
+
+
 const Community = mongoose.model('Community', CommunitySchema)
 
 module.exports = Community
+
+
+
+
+
+
+

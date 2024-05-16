@@ -1,3 +1,4 @@
+
 const mongoose = require('mongoose');
 
 const postSchema = new mongoose.Schema({
@@ -12,6 +13,10 @@ const postSchema = new mongoose.Schema({
     createdAt: {
         type: Date,
         default: Date.now
+    },
+    communityId: { 
+        type: mongoose.Schema.Types.ObjectId,
+        required: true
     }
 });
 

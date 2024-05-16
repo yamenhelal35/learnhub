@@ -2,8 +2,8 @@ const dotenv = require('dotenv')
 const { admin } = require('../Config/firebaseeconfig')
 
 exports.validatePost = (req, res, next) => {
-    const { title, content } = req.body;
-    if (!title || !content) {
+    const { title, content , communityId } = req.body;
+    if (!title || !content || !communityId) {
         return res.status(400).json({ error: 'Title and content are required' });
     }
     next();
