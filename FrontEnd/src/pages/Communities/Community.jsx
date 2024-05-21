@@ -101,7 +101,7 @@ const Community = ({ communityData: initialCommunityData }) => {
                             <p className="text-gray-600 mb-4">{community.details}</p>
                             <div className="flex justify-between">
              {/* ===================================== Really Important ================================ */}
-                                <p>//Place The Topic Here</p>
+                                <p>//Place The Topic Here Ya Kahled</p>
                                 <button className="bg-[#968BC9] hover:bg-[#605d70] text-white py-2 px-4 rounded-sm mr-2">
                                     Join
                                 </button>

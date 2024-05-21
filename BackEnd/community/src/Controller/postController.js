@@ -40,8 +40,8 @@ exports.createPost = async (req, res) => {
 exports.updatePost = async (req, res) => {
     try {
         const postId = req.params.id;
-        const { title, content , communityId } = req.body;
-        const updatedPost = await postService.updatePost(postId, title, content , communityId);
+        const { title, content  } = req.body;
+        const updatedPost = await postService.updatePost(postId, title, content);
         if (!updatedPost) {
             return res.status(404).json({ error: 'Post not found' });
         }

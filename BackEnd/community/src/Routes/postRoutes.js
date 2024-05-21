@@ -6,7 +6,7 @@ const postMiddleware = require('../middlewares/postMiddleware')
 
 
 router.get('/getpost', postController.getAllPosts);
-router.get('/:postId', postController.getPostById);
+router.get('/getpost/:postId', postController.getPostById);
 router.post('/createpost/:communityId', postController.createPost);
 router.put('/update/:postId', postController.updatePost);
 router.delete('/delete/:postId', postController.deletePost);
