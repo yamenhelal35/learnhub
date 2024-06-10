@@ -11,22 +11,25 @@ const AI = () => {
 
     const handleAsk = async () => {
         try {
-            const response = await fetch('http://localhost:5000/chat/ai', {
+            const apiKey=process.env.REACT_APP_OPENAI_API_KEY;
+
+            const response = await fetch('https://api.openai.com/v1/chat/completions', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
+                    'Authorization': `Bearer ${apiKey}`
+
                 },
-                body: JSON.stringify({ prompt: userInput }),
+                body: JSON.stringify({ text: userInput }),
             });
             const data = await response.json();
             setAIResponse(data.response);
+            console.log(data.response);
         } catch (error) {
             console.error('Error fetching AI response:', error);
             setAIResponse('Error fetching AI response. Please try again.');
         }
     };
-    
-    
 
     return (
         <div className="bg-gray-900 h-full">
